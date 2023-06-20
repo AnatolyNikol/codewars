@@ -28,12 +28,14 @@
         )
         return res
     }
+
     // Capitalization and Mutability
     function capitalizeWord(word) {
-        return word.slice(0,1).toUpperCase() + word.slice(1);
+        return word.slice(0, 1).toUpperCase() + word.slice(1);
     }
+
     // Contamination #1 -String-
-    function contamination(text, char){
+    function contamination(text, char) {
         return text.replace(/\S/g, char).split(' ').join(char)
     }
 
@@ -55,11 +57,40 @@
     }
 
     // Write a function to split a string and convert it into an array of words.
-    function stringToArray(string){
+    function stringToArray(string) {
         return string.split(' ')
     }
 
-    console.log(stringToArray("Robin Singh"))
+    // Drink about
+    function peopleWithAgeDrink(old) {
+        if (old < 14) {
+            return "drink toddy"
+        }
+        if (old < 18) {
+            return "drink coke"
+        }
+        if (old < 21) {
+            return "drink beer"
+        } else {
+            return "drink whisky"
+        }
+    };
+
+    // Triple Trouble
+    function tripleTrouble(one, two, three) {
+        let str = '';
+        for (let i = 0; i < one.length; i++) {
+            str += one[i] += two[i] += three[i];
+        }
+        return str
+    }
+
+    // Find the position!
+    function position(letter) {
+        let letters = 'abcdefghijklmnopqrstuvwxyz'
+            return `Position of alphabet: ${letters.indexOf(letter) + 1}`
+    }
+
 
 </script>
 </body>
