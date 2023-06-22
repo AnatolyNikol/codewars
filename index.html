@@ -88,9 +88,27 @@
     // Find the position!
     function position(letter) {
         let letters = 'abcdefghijklmnopqrstuvwxyz'
-            return `Position of alphabet: ${letters.indexOf(letter) + 1}`
+        return `Position of alphabet: ${letters.indexOf(letter) + 1}`
     }
 
+    // get character from ASCII Value
+    function getChar(c) {
+        return String.fromCharCode(c)
+    }
+
+
+    // Lario and Muigi Pipe Problem
+    function pipeFix(numbers) {
+        let arr = [];
+        let first = numbers[0]
+        let last = numbers[numbers.length - 1]
+        while (first <= last) {
+            arr.push(first++)
+        }
+        return arr
+    }
+
+    console.log(pipeFix([1,2,3,12]))
 
 </script>
 </body>
