@@ -123,6 +123,26 @@
         }
     }
 
+    // Sum of Multiples
+    function sumMul(n, m) {
+        let sum = []
+        if (m > 0) {
+            for (let i = n; i < m; i += n) {
+                sum.push(i)
+            }
+            return sum.reduce((acc, num) => acc + num, 0)
+        } else {
+            return 'INVALID'
+        }
+    }
+
+    // Price of Mangoes
+    function mango(quantity, price) {
+        return price * (quantity - Math.floor(quantity / 3))
+    }
+
+    console.log(mango(37,97))
+
 
 </script>
 </body>
