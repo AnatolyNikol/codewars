@@ -141,8 +141,28 @@
         return price * (quantity - Math.floor(quantity / 3))
     }
 
-    console.log(mango(37,97))
+    // What is between?
 
+    function between(a, b) {
+        let arr = [];
+        for (let i = a; i <= b; i++) {
+            arr.push(i)
+        }
+        return arr
+    }
+
+
+    // Short Long Short
+
+    function solution(a, b){
+        if (a.length < b.length) {
+            return a + b + a
+        } else {
+            return b + a + b
+        }
+    }
+
+    console.log(solution('U', 'False'))
 
 </script>
 </body>
