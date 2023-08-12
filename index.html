@@ -214,8 +214,23 @@
             return length * width * height
         }
     }
+    //Remove duplicates from list
+    function distinct(a) {
+        let newArr = a.filter((el, index) => {
+            return a.indexOf(el) === index
+        })
+        return newArr
+    }
 
-    console.log(Kata.getVolumeOfCuboid(6,2,5))
+    //Welcome to the City
+    function sayHello( name, city, state ) {
+        return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+    }
+
+    // console.log(sayHello(['Wallace','Russel','Osbourne'], 'Phoenix', 'Arizona'))
+
+
+
 
 </script>
 </body>
