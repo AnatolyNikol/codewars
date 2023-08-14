@@ -230,7 +230,34 @@
     // console.log(sayHello(['Wallace','Russel','Osbourne'], 'Phoenix', 'Arizona'))
 
 
+    // Removing Elements
+    function removeEveryOther(arr){
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (i % 2 === 0) {
+                newArr.push(arr[i])
+            }
+        }
+        return newArr
+    }
 
+    // console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']))
+
+    // Stringy Strings
+
+    function stringy(size) {
+        let str = '';
+        for (let i = 0; i < size; i++) {
+            if (i % 2 === 0) {
+                str += '1'
+            } else {
+                str += '0'
+            }
+        }
+        return str
+    }
+
+    // console.log(stringy(6))
 
 </script>
 </body>
