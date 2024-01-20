@@ -143,7 +143,7 @@ function between(a, b) {
 
 // Short Long Short
 
-function solution(a, b){
+function solution(a, b) {
     if (a.length < b.length) {
         return a + b + a
     } else {
@@ -161,7 +161,7 @@ function noBoringZeros(n) {
 }
 
 // Student's Final Grade
-function finalGrade (exam, projects) {
+function finalGrade(exam, projects) {
     if (exam > 90 || projects > 10) {
         return 100
     } else if (exam > 75 && projects >= 5) {
@@ -189,11 +189,11 @@ function enough(cap, on, wait) {
 }
 
 // Area or Perimeter
-const areaOrPerimeter = function(l , w) {
+const areaOrPerimeter = function (l, w) {
     if (l === w) {
         return l * w
     } else {
-        return  l + l + w + w
+        return l + l + w + w
     }
 };
 
@@ -203,6 +203,7 @@ class Kata {
         return length * width * height
     }
 }
+
 //Remove duplicates from list
 function distinct(a) {
     let newArr = a.filter((el, index) => {
@@ -212,7 +213,7 @@ function distinct(a) {
 }
 
 //Welcome to the City
-function sayHello( name, city, state ) {
+function sayHello(name, city, state) {
     return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
 }
 
@@ -220,7 +221,7 @@ function sayHello( name, city, state ) {
 
 
 // Removing Elements
-function removeEveryOther(arr){
+function removeEveryOther(arr) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
         if (i % 2 === 0) {
@@ -259,8 +260,73 @@ let findAverage = function (nums) {
 // console.log(findAverage([1, 3, 5, 7]))
 
 // Replace all dots
-let replaceDots = function(str) {
+let replaceDots = function (str) {
     return str.replace(/\./g, '-');
 }
 
 // console.log(replaceDots("one.two.three"))
+
+
+//Basic Training: Add item to an Array
+
+var websites = [];
+
+websites.push('codewars')
+// console.log(websites)
+
+
+//Mr. Freeze
+
+const MrFreeze = {};
+Object.freeze(MrFreeze)
+
+//Is this my tail?
+
+function correctTail(body, tail) {
+    let sub = body.substr(body.length - (tail.length))
+
+    if (sub === tail) {
+        return true
+    } else
+        return false
+}
+
+// console.log(correctTail("Meerkat", "t"))
+
+
+//Find numbers which are divisible by given number
+
+function divisibleBy(numbers, divisor){
+    let arr = []
+
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % divisor === 0) {
+            arr.push(numbers[i])
+        }
+    }
+    return arr
+}
+
+// console.log(divisibleBy([1, 2, 3, 4, 5, 6], 2))
+
+
+//Sum Mixed Array
+
+function sumMix(x){
+    return x.map(i => Number(i)).reduce((sum, current) => sum + current)
+}
+
+// console.log(sumMix([9, 3, '7', '3']))
+
+
+//101 Dalmatians - squash the bugs, not the dogs!
+function howManyDalmatians(number) {
+
+var dogs  = ["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIANS!!!"];
+
+var respond = number <= 10 ? dogs[0] : number <= 50 ? dogs[1] : number === 101 ? dogs[3] : dogs[2]
+
+return respond
+}
+
+// console.log(howManyDalmatians(101))
