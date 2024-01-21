@@ -296,7 +296,7 @@ function correctTail(body, tail) {
 
 //Find numbers which are divisible by given number
 
-function divisibleBy(numbers, divisor){
+function divisibleBy(numbers, divisor) {
     let arr = []
 
     for (let i = 0; i < numbers.length; i++) {
@@ -312,7 +312,7 @@ function divisibleBy(numbers, divisor){
 
 //Sum Mixed Array
 
-function sumMix(x){
+function sumMix(x) {
     return x.map(i => Number(i)).reduce((sum, current) => sum + current)
 }
 
@@ -322,11 +322,47 @@ function sumMix(x){
 //101 Dalmatians - squash the bugs, not the dogs!
 function howManyDalmatians(number) {
 
-var dogs  = ["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIANS!!!"];
+    var dogs = ["Hardly any", "More than a handful!", "Woah that's a lot of dogs!", "101 DALMATIANS!!!"];
 
-var respond = number <= 10 ? dogs[0] : number <= 50 ? dogs[1] : number === 101 ? dogs[3] : dogs[2]
+    var respond = number <= 10 ? dogs[0] : number <= 50 ? dogs[1] : number === 101 ? dogs[3] : dogs[2]
 
-return respond
+    return respond
 }
 
 // console.log(howManyDalmatians(101))
+
+
+//Suzuki needs help lining up his students!
+
+function lineupStudents(students) {
+    let stArr = students.split(' ');
+    return stArr.sort((a, b) => a.length - b.length).sort().sort((a, b) => a.length - b.length).reverse()
+}
+
+// console.log(lineupStudents('Yoshikazu Toshiyuki Takahiro Tamotsu Toshio Naoko Norio Shuji Yori'))
+
+
+
+function longestPossible(play) {
+    let songs = [
+        {artist: 'Artist', title: 'Title String', playback: '04:30'}
+    ]
+    let res = songs.filter(el => el.playback.slice(0, 2) * 60 + +el.playback.slice(-2) <= play)
+        .sort((a, b) => b.playback > a.playback ? 1 : -1);
+    return res.length ? res[0].title : false;
+}
+
+//Sort My Textbooks
+
+function sorter(textbooks) {
+    return textbooks.sort((a, b) => a.toLowerCase() > b.toLowerCase()
+        ? 1
+        : a.toLowerCase() < b.toLowerCase()
+            ? -1
+            : 0)
+}
+
+console.log(sorter(['Algebra', 'History', 'Geometry', 'English']))
+// console.log(sorter(['**english', '$istory', 'Alg#bra', 'Geom^try']))
+
+
