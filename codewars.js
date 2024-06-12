@@ -342,7 +342,6 @@ function lineupStudents(students) {
 // console.log(lineupStudents('Yoshikazu Toshiyuki Takahiro Tamotsu Toshio Naoko Norio Shuji Yori'))
 
 
-
 function longestPossible(play) {
     let songs = [
         {artist: 'Artist', title: 'Title String', playback: '04:30'}
@@ -362,7 +361,216 @@ function sorter(textbooks) {
             : 0)
 }
 
-console.log(sorter(['Algebra', 'History', 'Geometry', 'English']))
+// console.log(sorter(['Algebra', 'History', 'Geometry', 'English']))
 // console.log(sorter(['**english', '$istory', 'Alg#bra', 'Geom^try']))
 
 
+//Working with arrays I (and why your code fails in some katas)
+
+function withoutLast(arr) {
+    // Fix it
+    // arr.pop(); // removes the last element
+    return arr.slice(0, arr.length - 1); // removes the last element
+}
+
+// console.log(withoutLast([ 1, 2, 3, 4, 5 ]))
+
+
+// Divide and Conquer
+
+function divCon(x) {
+    let numbers = [];
+    let strings = [];
+
+    for (let i = 0; i < x.length; i++) {
+        if (typeof x[i] === 'string') {
+            strings.push(x[i])
+        } else {
+            numbers.push(x[i])
+        }
+    }
+    numbers = numbers.reduce(function (sum, elem) {
+        return sum + elem
+    }, 0)
+
+    strings = strings.reduce(function (sum, elem) {
+        return sum + (+elem)
+    }, 0)
+
+    return numbers - strings
+}
+
+//function divCon(x){
+//   return x.reduce((acc, cur) => typeof cur === 'number'? acc + cur : acc - Number(cur),0)
+// }
+
+// console.log(divCon(['5', '0', 9, 3, 2, 1, '9', 6, 7]))
+
+
+// Check the exam
+
+function checkExam(array1, array2) {
+    let res = 0;
+
+    for (let i = 0; i < array2.length; i++) {
+        // debugger
+        if (array2[i] === "") {
+            res += 0
+        } else if (array1[i] === array2[i]) {
+            res += 4
+        } else if (array1[i] !== array2[i]) {
+            res -= 1
+        }
+    }
+    if (res >= 0) {
+        return res
+    } else {
+        return 0
+    }
+}
+
+// console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b", ""]))
+
+// Convert an array of strings to array of numbers
+
+function toNumberArray(stringarray) {
+    return stringarray.map(el => JSON.parse(el))
+}
+
+// console.log(toNumberArray(["1.1","2.2","3.3"]))
+
+// Basics 04: Rotate Matrix
+
+function rotateMatrix(matrix) {
+    let column = []
+    let length = matrix[0].length
+
+    for (let i = length - 1; i >= 0; i--) {
+        let row = [];
+        for (let j = 0; j < matrix.length; j++) {
+            row.push(matrix[j][i])
+        }
+        column.push(row)
+    }
+    return column
+}
+
+// console.log(rotateMatrix( [[17,-32,49,64,-30,9,-55,-80],[44,-25,69,-62,-89,-73,-44,64]]))
+
+// Sort an array by value and index
+
+function sortByValueAndIndex(array) {
+    return array
+        .map((x, i) => [x, x * i + x])
+        .sort((a, b) => a[1] - b[1])
+        .map((a) => a[0])
+}
+
+// console.log(sortByValueAndIndex([ 23, 2, 3, 4, 5 ]))
+
+// Invert values
+
+function invert(array) {
+    return array.map(el => el < 0 ? Math.abs(el) : Number('-' + el))
+}
+
+// console.log(invert([1,-2,3,-4,5]))
+
+// Find the Difference in Age between Oldest and Youngest Family Members
+
+function differenceInAges(ages) {
+    let agesArr = ages.sort(function (a, b) {
+        if (a > b) {
+            return 1
+        } else {
+            return -1
+        }
+    }) //[14, 32, 57, 99]
+    let finArr = []
+    for (let i = 0; i < 1; i++) {
+        finArr.push(agesArr[0])
+        finArr.push(agesArr[agesArr.length - 1])
+    }
+    let diff = finArr[1] - finArr[0]
+    finArr.push(diff)
+    return finArr
+}
+
+// function differenceInAges (ages) {
+//
+//     let max = Math.max(...ages),
+//         min = Math.min(...ages)
+//     diff = max - min
+//
+//     return [min, max, diff]
+// }
+
+// console.log(differenceInAges([57, 99, 14, 32]))
+
+// Merge two sorted arrays into one
+
+function mergeArrays(arr1, arr2) {
+    let finArr = arr1.concat(arr2);
+    let filteredArr = finArr.filter((el, id) => finArr.indexOf(el) === id)
+
+    return filteredArr.sort(function (a,b) {
+        if (a > b) {
+            return 1
+        } else {
+            return -1
+        }
+    })
+}
+//https://the-evening-code.com/posts/how-to-remove-array-duplicates
+// console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))
+
+// Transportation on vacation
+
+function rentalCarCost(d) {
+   if (d < 3) {
+       d *= 40
+   } else if (d >= 3 && d < 7) {
+       d = (d * 40) - 20
+   } else {
+       d = (d * 40) - 50
+   }
+   return d
+}
+
+// console.log(rentalCarCost(3))
+
+// CSV representation of array
+
+function toCsvText(array) {
+    return array.join('\n')
+}
+
+// console.log(toCsvText([
+//     [ 0, 1, 2, 3, 45 ],
+//     [ 10,11,12,13,14 ],
+//     [ 20,21,22,23,24 ],
+//     [ 30,31,32,33,34 ]
+// ]))
+
+// Chuck Norris VII - True or False? (Beginner)
+
+function ifChuckSaysSo(){
+    return !true
+}
+
+// console.log(ifChuckSaysSo())
+
+// Powers of 2
+
+function powersOfTwo(n){
+    let arr = []
+    let i = 0
+
+    while (n >= i) {
+        arr.push(Math.pow(2, i))
+        i++
+    }
+    return arr
+}
+
+// console.log(powersOfTwo(4))
