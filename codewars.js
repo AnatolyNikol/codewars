@@ -513,7 +513,7 @@ function mergeArrays(arr1, arr2) {
     let finArr = arr1.concat(arr2);
     let filteredArr = finArr.filter((el, id) => finArr.indexOf(el) === id)
 
-    return filteredArr.sort(function (a,b) {
+    return filteredArr.sort(function (a, b) {
         if (a > b) {
             return 1
         } else {
@@ -521,20 +521,21 @@ function mergeArrays(arr1, arr2) {
         }
     })
 }
+
 //https://the-evening-code.com/posts/how-to-remove-array-duplicates
 // console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12]))
 
 // Transportation on vacation
 
 function rentalCarCost(d) {
-   if (d < 3) {
-       d *= 40
-   } else if (d >= 3 && d < 7) {
-       d = (d * 40) - 20
-   } else {
-       d = (d * 40) - 50
-   }
-   return d
+    if (d < 3) {
+        d *= 40
+    } else if (d >= 3 && d < 7) {
+        d = (d * 40) - 20
+    } else {
+        d = (d * 40) - 50
+    }
+    return d
 }
 
 // console.log(rentalCarCost(3))
@@ -554,7 +555,7 @@ function toCsvText(array) {
 
 // Chuck Norris VII - True or False? (Beginner)
 
-function ifChuckSaysSo(){
+function ifChuckSaysSo() {
     return !true
 }
 
@@ -562,7 +563,7 @@ function ifChuckSaysSo(){
 
 // Powers of 2
 
-function powersOfTwo(n){
+function powersOfTwo(n) {
     let arr = []
     let i = 0
 
@@ -574,3 +575,56 @@ function powersOfTwo(n){
 }
 
 // console.log(powersOfTwo(4))
+
+
+// Will you make it?
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+    return distanceToPump <= mpg * fuelLeft;
+};
+
+// console.log(zeroFuel(100, 50, 1))
+
+
+// Sum The Strings
+
+function sumStr(a, b) {
+    return String(Number(a)+Number(b));
+}
+
+// console.log(sumStr("34","5"))
+
+
+// Well of Ideas - Easy Version
+
+function well(x){
+    let goods = 0
+    x.map(el => el === 'good' ? goods++ : '')
+    if (goods > 0 && goods <= 2) {
+        return 'Publish!'
+    } else if (goods > 2) {
+        return 'I smell a series!'
+    } else {
+        return 'Fail!'
+    }
+}
+
+// console.log(well(["good","bad","bad","bad","bad","bad","bad","bad","bad","good"]))
+
+// My head is at the wrong end!
+
+function fixTheMeerkat(arr) {
+    return arr.reverse()
+}
+
+// console.log(fixTheMeerkat(["tail", "body", "head"]))
+
+// I love you, a little , a lot, passionately ... not at all
+// https://habr.com/ru/articles/770522/
+function howMuchILoveYou(nbPetals) {
+    let loveArr = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"];
+
+    return loveArr[(nbPetals - 1) % 6]
+}
+
+console.log(howMuchILoveYou(200))
