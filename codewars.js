@@ -589,7 +589,7 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 // Sum The Strings
 
 function sumStr(a, b) {
-    return String(Number(a)+Number(b));
+    return String(Number(a) + Number(b));
 }
 
 // console.log(sumStr("34","5"))
@@ -597,7 +597,7 @@ function sumStr(a, b) {
 
 // Well of Ideas - Easy Version
 
-function well(x){
+function well(x) {
     let goods = 0
     x.map(el => el === 'good' ? goods++ : '')
     if (goods > 0 && goods <= 2) {
@@ -627,4 +627,66 @@ function howMuchILoveYou(nbPetals) {
     return loveArr[(nbPetals - 1) % 6]
 }
 
-console.log(howMuchILoveYou(200))
+// console.log(howMuchILoveYou(200))
+
+
+// https://learn.javascript.ru/map-set
+// https://sky.pro/wiki/javascript/udalenie-dublikatov-iz-massiva-obyektov-v-java-script/
+const array = [{a: 1}, {b: 1}, {b: 2}, {a: 1}, {c: 1}];
+
+const removeDuplicates = (arr) => {
+    const unique = Array.from(new Set(arr.map(item => JSON.stringify(item)))).map(item => JSON.parse(item));
+    return unique
+}
+
+// console.log(removeDuplicates(array))
+
+
+// Sum Arrays
+
+function sum(numbers) {
+    "use strict";
+    let res = 0;
+    for (let el of numbers) {
+        res += el
+    }
+    return res
+}
+
+// console.log(sum([]))
+
+// Count the Monkeys!
+
+function monkeyCount(n) {
+// your code here
+    let monkeys = [];
+    for (let i = 1; i <= n; i++) {
+        monkeys.push(i)
+    }
+    return monkeys
+}
+
+// console.log(monkeyCount(9))
+
+// Get the mean of an array
+
+function getAverage(marks) {
+    //TODO : calculate the downward rounded average of the marks array
+    let average = 0;
+    for (let el of marks) {
+        average += el
+    }
+    return Math.floor(average / marks.length)
+}
+
+// console.log(getAverage([1,1,1,1,1,1,1,2]))
+
+// Enumerable Magic #1 - True for All?
+
+function all(arr, fun) {
+    return arr.every(fun)
+}
+
+// console.log(all([1, 2, 3, 4, 5], function (v) {
+//     return v > 10
+// }))
