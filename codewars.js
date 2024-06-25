@@ -690,3 +690,47 @@ function all(arr, fun) {
 // console.log(all([1, 2, 3, 4, 5], function (v) {
 //     return v > 10
 // }))
+
+// Parse nice int from char problem
+
+function getAge(inputString){
+// return the girl's correct age as an integer. Happy coding :)
+    let strArr = inputString.split('')
+    return Number(strArr[0])
+}
+
+// console.log(getAge("9 years old"))
+
+// All Star Code Challenge #18
+
+function strCount(str, letter){
+    //code here
+    let count = 0
+    let strArr = str.split('')
+    for (let el of strArr) {
+        if (el === letter) {
+            count += 1
+        }
+    }
+    return count
+}
+
+// console.log(strCount('Hello', 'l'))
+
+// Keep up the hoop
+
+function hoopCount (n) {
+    //your code goes here
+    return n < 10 ? "Keep at it until you get it" : "Great, now move on to tricks"
+}
+
+// console.log(hoopCount(3))
+
+// Find Nearest square number
+
+function nearestSq(n){
+    // your code
+    return Math.pow(Math.round(Math.sqrt(n)), 2)
+}
+
+// console.log(nearestSq(111))
