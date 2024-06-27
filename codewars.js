@@ -734,3 +734,32 @@ function nearestSq(n){
 }
 
 // console.log(nearestSq(111))
+
+// Grasshopper - Terminal game combat function
+
+function combat(health, damage) {
+    // Write your code here
+    return damage < health ? health - damage : 0
+}
+
+// console.log(combat(92, 8))
+
+// Draw stairs
+
+function drawStairs(n) {
+    // your code here
+    let step = ''
+    for (let i = 1; i <= n; i++) {
+        if (i != n) {
+            step += 'I\n'
+            for (let j = 0; j < i; j++) {
+                step += ' '
+            }
+        } else {
+            step += 'I'
+        }
+    }
+    return step
+}
+
+// console.log(drawStairs(5))
